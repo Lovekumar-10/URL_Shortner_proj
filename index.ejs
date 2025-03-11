@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortner by LOveKumar</title>
+    <style>
+        /* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+.div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+a {
+    color: #f1c40f;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ffeb3b;
+    text-shadow: 0 0 10px rgba(255, 235, 59, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="div">
+        <h1>Convert long URL into Short URL</h1>
+        <form action="run" method="post">
+            <label for="first">Paste URL :</label>
+            <input type="text" name="longUrl" id="first" value="" required> <br> <br>
+
+            <button>Get Short URL</button>
+            
+        </form>
+
+        <% if(shortURL) { %>
+            <p>Your Short URL: <a href="<%= shortURL %>" target="_blank" />
+            <%= shortURL %>
+            </p>
+        <% } %>
+         
+
+    </div>
+   
+</body>
+</html>
